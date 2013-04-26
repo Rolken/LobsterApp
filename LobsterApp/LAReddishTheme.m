@@ -37,15 +37,14 @@
 - (UIImage *)backBarButtonBackgroundForState:(UIControlState)state style:(UIBarButtonItemStyle)style barMetrics:(UIBarMetrics)barMetrics
 {
     NSString *imageName = @"backButtonBackground";
-    
-    if (state == UIControlStateNormal) {
-        imageName = [imageName stringByAppendingString:@"Normal"];
-    } else if (state == UIControlStateHighlighted) {
-        imageName = [imageName stringByAppendingString:@"Highlighted"];
-    } else if (state == UIControlStateHighlighted) {
-        imageName = [imageName stringByAppendingString:@"Disabled"];
-    }
-    
+
+    NSString *statePostfix = (state == UIControlStateNormal)      ? @"Normal"
+                           : (state == UIControlStateHighlighted) ? @"Highlighted"
+                           : (state == UIControlStateDisabled)    ? @"Disabled"
+                                                                  : nil;
+
+    imageName = [imageName stringByAppendingString:statePostfix];
+
     UIImage *image = [UIImage imageNamed:imageName];
     image = [image resizableImageWithCapInsets:UIEdgeInsetsMake(5.0, 14.0, 0.0, 5.0)];
     image = [image imageWithAlignmentRectInsets:UIEdgeInsetsMake(0.0, 0.0, 1.0, 0.0)];
