@@ -20,7 +20,7 @@
         appFont = [UIFont fontWithName:@"HelveticaNeue" size:17.0f];
     });
     
-    CGSize titleSize = [story.title sizeWithFont:appFont constrainedToSize:CGSizeMake(290.0f, 100.0f) lineBreakMode:NSLineBreakByWordWrapping];
+    CGSize titleSize = [story.title sizeWithFont:appFont constrainedToSize:CGSizeMake(270.0f, 100.0f) lineBreakMode:NSLineBreakByWordWrapping];
     return titleSize.height + 28.0f;
 }
 
