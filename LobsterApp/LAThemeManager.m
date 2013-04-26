@@ -33,6 +33,9 @@
     [navigationBarAppearance setBackgroundImage:[theme navigationBackgroundForBarMetrics:UIBarMetricsLandscapePhone] forBarMetrics:UIBarMetricsLandscapePhone];
     [navigationBarAppearance setShadowImage:[theme topShadowImage]];
     [navigationBarAppearance setTitleTextAttributes:[theme navigationBarTitleAttributes]];
+
+    [navigationBarAppearance setTitleVerticalPositionAdjustment:[theme navigationBarTitleVerticalPositionAdjustmentForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
+    [navigationBarAppearance setTitleVerticalPositionAdjustment:[theme navigationBarTitleVerticalPositionAdjustmentForBarMetrics:UIBarMetricsLandscapePhone] forBarMetrics:UIBarMetricsLandscapePhone];
     
     UIBarButtonItem *barButtonItemAppearance = [UIBarButtonItem appearance];
     

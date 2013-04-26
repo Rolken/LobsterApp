@@ -33,6 +33,8 @@ typedef enum {
 - (UIImage *)topShadowImage;
 - (UIImage *)bottomShadowImage;
 
+- (CGFloat)navigationBarTitleVerticalPositionAdjustmentForBarMetrics:(UIBarMetrics)barMetrics;
+
 - (NSDictionary *)navigationBarTitleAttributes;
 - (NSDictionary *)barButtonTitleAttributesForState:(UIControlState)state;
 

@@ -77,6 +77,11 @@
     return nil;
 }
 
+- (CGFloat)navigationBarTitleVerticalPositionAdjustmentForBarMetrics:(UIBarMetrics)barMetrics
+{
+    return 0.f;
+}
+
 - (NSDictionary *)navigationBarTitleAttributes
 {
     return nil;

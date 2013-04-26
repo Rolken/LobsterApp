@@ -63,6 +63,17 @@
     return [UIImage imageNamed:@"bottomShadow"];
 }
 
+- (CGFloat)navigationBarTitleVerticalPositionAdjustmentForBarMetrics:(UIBarMetrics)barMetrics
+{
+    switch (barMetrics) {
+        case UIBarMetricsLandscapePhone:
+            // This is just an eyeballed 'hey that seems to look straight' number.
+            return -2.f;
+        case UIBarMetricsDefault:
+            return 0.f;
+    }
+}
+
 - (NSDictionary *)navigationBarTitleAttributes
 {
     NSDictionary *attributes = @{
