@@ -72,6 +72,15 @@
     }
 }
 
+- (void) willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    [super willAnimateRotationToInterfaceOrientation:toInterfaceOrientation duration:duration];
+
+    // Adjust cell heights
+    [self.tableView beginUpdates];
+    [self.tableView endUpdates];
+}
+
 #pragma mark - Table View
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -95,7 +104,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     Story *story = (Story *)[self.fetchedResultsController objectAtIndexPath:indexPath];
-    return [LAStoryCell cellHeightWithStory:story];
+    return [LAStoryCell cellHeightForWidth:CGRectGetWidth(tableView.bounds) withStory:story];
 }
 
 #pragma mark - Fetched results controller

@@ -12,7 +12,7 @@
 
 @implementation LAStoryCell
 
-+ (CGFloat)cellHeightWithStory:(Story *)story
++ (CGFloat)cellHeightForWidth:(CGFloat)width withStory:(Story *)story
 {
     static UIFont *appFont;
     static dispatch_once_t onceToken;
@@ -20,7 +20,7 @@
         appFont = [UIFont fontWithName:@"HelveticaNeue" size:17.0f];
     });
     
-    CGSize titleSize = [story.title sizeWithFont:appFont constrainedToSize:CGSizeMake(270.0f, 100.0f) lineBreakMode:NSLineBreakByWordWrapping];
+    CGSize titleSize = [story.title sizeWithFont:appFont constrainedToSize:CGSizeMake(width - 50.f, 100.0f) lineBreakMode:NSLineBreakByWordWrapping];
     return titleSize.height + 28.0f;
 }
 

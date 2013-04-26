@@ -16,7 +16,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *authorNameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *commentCountLabel;
 
-+ (CGFloat)cellHeightWithStory:(Story *)story;
++ (CGFloat)cellHeightForWidth:(CGFloat)width withStory:(Story *)story;
 
 - (void)configureWithStory:(Story *)story;
 
