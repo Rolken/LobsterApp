@@ -26,6 +26,7 @@
         
         UIImage *shadowImage = [UIImage imageNamed:@"bottomShadow"];
         UIImageView *shadowImageView = [[UIImageView alloc] initWithImage:shadowImage];
+        shadowImageView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         CGRect shadowFrame = shadowImageView.frame;
         shadowFrame.size.width = 320.0f;
         shadowFrame.origin.x = 0.0f;
